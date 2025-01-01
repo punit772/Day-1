@@ -5,12 +5,13 @@ using namespace std;
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        int maxProfit=0,buy=prices[0];
+        int highProfit=0,buy=prices[0];
         for(int i=1;i<prices.size();i++){
             buy=min(buy,prices[i]);
-            maxProfit=max(maxProfit,prices[i]-buy);
+            int current_profit=prices[i] - buy;
+            highProfit=max(highProfit,current_profit);
         }
-        return maxProfit;
+        return highProfit;
     }
 };
 
